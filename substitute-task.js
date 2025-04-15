@@ -2,25 +2,39 @@
 
 //example 1
 function printArray(array) {
+    if (!Array.isArray(array)) {
+        throw new Error("Input is not a valid array.");
+    }
+
     console.log("Names in the list:");
     for (let i = 0; i < array.length; i++) {
         console.log(array[i]);
     }
 }
 
+try {
+    printArray(['string', 'anotherString', notaSTring]);
+} catch (err) {
+    console.log('Error: ' + err.message);
+}
+
+
 //example 2
 function calculateProduct(a, b) {
+    if (typeof a !== 'number' || typeof b !== 'number') {
+        throw new Error('Both arguments must be numbers.');
+    }
     return a * b;
 }
 
-
-//example 3
-function calculateProduct(a, b) {
-    return a * b;
+try {
+    console.log(calculateProduct(5, notANumber));
+} catch (err) {
+    console.log('Error: ' + err.message);
 }
+
 
 //example 4
-// const incompleteTasks = 
 try {
     todos.filter((todo) => !todo.completed);
 } catch (err) {
@@ -28,7 +42,6 @@ try {
 }
 
 //example 5
-// const sortedByPriority = 
 
 try {
     todos.sort((a, b) => a.priority - b.priority);
