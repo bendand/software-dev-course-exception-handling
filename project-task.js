@@ -61,6 +61,8 @@ function getAdoptionFee(animalName) {
     return fees[index];
 }
 
+
+
 // ============================================
 // 🚀 Main Program Logic
 // ============================================
@@ -103,6 +105,7 @@ while (true) {
 
     } catch (err) {
         console.log("Unexpected error:", err.message);
+        break
     }
 }
 
