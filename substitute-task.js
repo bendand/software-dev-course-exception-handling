@@ -48,3 +48,26 @@ try {
 } catch (err) {
     console.log('Unexpected Error: ' + err.message);
 }
+
+
+//example 4
+
+try {
+    const incompleteTasks = todos.filter((todo) => !todo.completed);
+    console.log(incompleteTasks);
+} catch (err) {
+    console.log('Error: ' + err.message);
+}
+
+//example 5
+
+
+try {
+    const sortedByPriority = todos.sort((a, b) => a.priority - b.priority);
+    console.log(sortedByPriority);
+} catch (err) {
+    console.log('Error: ' + err.message);
+}
+
+
+
